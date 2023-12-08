@@ -8,23 +8,33 @@ function Test() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+      <div className="flex">
+        <a
+          href="https://vitejs.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-1 justify-center"
+        >
+          <img src={viteLogo} className="logo justify-center" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href="https://react.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-1 justify-center"
+        >
+          <img
+            src={reactLogo}
+            className="logo react justify-center"
+            alt="React logo"
+          />
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <div className="avatar">
-          <div className="w-24 rounded">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary mb-3"
+          type="submit"
           onClick={() => setCount((count) => count + 1)}
         >
           count is {count}
