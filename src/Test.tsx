@@ -4,7 +4,18 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function Test() {
+  const [name, setName] = useState("Tata");
   const [count, setCount] = useState(0);
+
+  const handleNameChange = (): void => {
+    const names: string[] = ["Bob", "Kevin", "Dave"];
+    const index: number = Math.floor(Math.random() * 3);
+    setName(names[index]);
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    console.log(e.target);
+  };
 
   return (
     <>
@@ -32,10 +43,15 @@ function Test() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <h2 className="my-3">Hello! {name}</h2>
         <button
           className="btn btn-primary mb-3"
           type="submit"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={(e) => {
+            handleNameChange();
+            handleClick(e);
+            setCount((count) => count + 1);
+          }}
         >
           count is {count}
         </button>
