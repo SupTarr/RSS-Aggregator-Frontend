@@ -1,7 +1,6 @@
 import React, { ReactElement, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Loading, Size } from "./components/Loading.tsx";
-import "./App.css";
 
 const PageLogin = lazy(() => import("./pages/PageLogin.tsx"));
 
