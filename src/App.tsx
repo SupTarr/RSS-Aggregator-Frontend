@@ -1,9 +1,8 @@
 import React, { ReactElement, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PageLogin from "./pages/PageLogin.tsx";
 import "./App.css";
 
-const Test = lazy(() => import("./Test.tsx"));
+const PageLogin = lazy(() => import("./pages/PageLogin.tsx"));
 
 const App: React.FC = (): ReactElement => {
   return (
