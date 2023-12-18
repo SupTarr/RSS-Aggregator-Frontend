@@ -37,26 +37,26 @@ const LoginContainer: React.FC = (): ReactElement => {
   );
 
   return (
-    <form className="login-container">
-      <label className="form-control w-full max-w-xs">
+    <form className="login-container flex flex-col content-center flex-wrap">
+      <label className="form-control w-full max-w-md">
         <div className="label">
           <span className="label-text">Username</span>
         </div>
         <input
           type="text"
-          className="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-md"
           onChange={(e) =>
             dispatch({ type: "setUsername", username: e.target.value })
           }
         />
       </label>
-      <label className="form-control w-full max-w-xs">
+      <label className="form-control w-full max-w-md">
         <div className="label">
           <span className="label-text">Password</span>
         </div>
         <input
           type="password"
-          className="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-md"
           onChange={(e) =>
             dispatch({ type: "setPassword", password: e.target.value })
           }
