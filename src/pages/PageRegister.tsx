@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
-import LoginContainer from "../containers/LoginContainer.tsx";
+import RegisterContainer from "../containers/RegisterContainer.tsx";
 
-const PageLogin: React.FC = (): ReactElement => {
+const PageRegister: React.FC = (): ReactElement => {
   return (
-    <section className="page-login min-h-screen flex flex-col flex-wrap justify-center bg-neutral-content">
+    <section className="page-register min-h-screen flex flex-col flex-wrap justify-center bg-neutral-content">
       <div className="card sm:card-side bg-base-100 drop-shadow-2xl mx-5">
         <figure>
           <img
@@ -12,11 +12,11 @@ const PageLogin: React.FC = (): ReactElement => {
           />
         </figure>
         <div className="card-body">
-          <LoginContainer />
+          <RegisterContainer />
         </div>
       </div>
     </section>
   );
 };
 
-export default PageLogin;
+export default PageRegister;
