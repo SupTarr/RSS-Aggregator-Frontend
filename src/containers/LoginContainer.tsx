@@ -1,12 +1,10 @@
 import React, { ReactElement, useReducer } from "react";
 import { Link } from "react-router-dom";
-import { Register } from "../Links.tsx"
+import { Textbox, FormType } from "../components/Textbox.tsx";
+import { Register } from "../Links.tsx";
 
 type LoginAction =
-  | {
-      type: "setUsername";
-      username: string;
-    }
+  | { type: "setUsername"; username: string }
   | { type: "setPassword"; password: string };
 
 type LoginState = {
@@ -35,36 +33,23 @@ const LoginContainer: React.FC = (): ReactElement => {
     {
       username: "",
       password: "",
-    },
+    }
   );
 
   return (
     <form className="login-container flex flex-col content-center flex-wrap">
-      <label className="form-control w-full max-w-md">
-        <div className="label">
-          <span className="label-text">Username</span>
-        </div>
-        <input
-          type="text"
-          className="input input-bordered w-full max-w-md"
-          onChange={(e) =>
-            dispatch({ type: "setUsername", username: e.target.value })
-          }
-        />
-      </label>
-      <label className="form-control w-full max-w-md">
-        <div className="label">
-          <span className="label-text">Password</span>
-        </div>
-        <input
-          type="password"
-          className="input input-bordered w-full max-w-md"
-          onChange={(e) =>
-            dispatch({ type: "setPassword", password: e.target.value })
-          }
-        />
-      </label>
-      <Link className="link link-primary mt-5 text-center" to={Register}>Register</Link>
+      <Textbox
+        name="Username"
+        onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
+      />
+      <Textbox
+        name="Password"
+        formType={FormType.Password}
+        onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
+      />
+      <Link className="link link-primary mt-5 text-center" to={Register}>
+        Register
+      </Link>
     </form>
   );
 };

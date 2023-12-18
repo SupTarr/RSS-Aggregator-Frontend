@@ -1,12 +1,10 @@
 import React, { ReactElement, useReducer } from "react";
 import { Link } from "react-router-dom";
-import { Login } from "../Links.tsx"
+import { Textbox, FormType } from "../components/Textbox.tsx";
+import { Login } from "../Links.tsx";
 
 type RegisterAction =
-  | {
-      type: "setUsername";
-      username: string;
-    }
+  | { type: "setUsername"; username: string }
   | { type: "setPassword"; password: string }
   | { type: "setConfirmPassword"; confirmPassword: string };
 
@@ -48,43 +46,25 @@ const RegisterContainer: React.FC = (): ReactElement => {
 
   return (
     <form className="Register-container flex flex-col content-center flex-wrap">
-      <label className="form-control w-full max-w-md">
-        <div className="label">
-          <span className="label-text">Username</span>
-        </div>
-        <input
-          type="text"
-          className="input input-bordered w-full max-w-md"
-          onChange={(e) =>
-            dispatch({ type: "setUsername", username: e.target.value })
-          }
-        />
-      </label>
-      <label className="form-control w-full max-w-md">
-        <div className="label">
-          <span className="label-text">Password</span>
-        </div>
-        <input
-          type="password"
-          className="input input-bordered w-full max-w-md"
-          onChange={(e) =>
-            dispatch({ type: "setPassword", password: e.target.value })
-          }
-        />
-      </label>
-      <label className="form-control w-full max-w-md">
-        <div className="label">
-          <span className="label-text">Confirm Password</span>
-        </div>
-        <input
-          type="password"
-          className="input input-bordered w-full max-w-md"
-          onChange={(e) =>
-            dispatch({ type: "setConfirmPassword", confirmPassword: e.target.value })
-          }
-        />
-      </label>
-      <Link className="link link-primary mt-5 text-center" to={Login}>Login</Link>
+      <Textbox
+        name="Username"
+        onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
+      />
+      <Textbox
+        name="Password"
+        formType={FormType.Password}
+        onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
+      />
+      <Textbox
+        name="Confirm Password"
+        formType={FormType.Password}
+        onChange={(v: string) =>
+          dispatch({ type: "setConfirmPassword", confirmPassword: v })
+        }
+      />
+      <Link className="link link-primary mt-5 text-center" to={Login}>
+        Login
+      </Link>
     </form>
   );
 };
