@@ -7,7 +7,9 @@ enum Size {
   Large,
 }
 
-const Loading: React.FC<{ size: Size }> = ({ size }): ReactElement => {
+const Loading: React.FC<{ size?: Size }> = ({
+  size = Size.ExSmall,
+}): ReactElement => {
   let classModifier = "xs";
   switch (size) {
     case Size.Small:

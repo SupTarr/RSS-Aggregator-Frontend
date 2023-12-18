@@ -33,11 +33,8 @@ const LoginContainer: React.FC = (): ReactElement => {
     {
       username: "",
       password: "",
-    }
+    },
   );
-
-  console.log(">> username:", state.username);
-  console.log(">> password:", state.password);
 
   return (
     <form className="login-container">
