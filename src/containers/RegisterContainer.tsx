@@ -41,7 +41,7 @@ const RegisterContainer: React.FC = (): ReactElement => {
       username: "",
       password: "",
       confirmPassword: "",
-    }
+    },
   );
 
   return (

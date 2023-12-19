@@ -1,4 +1,4 @@
-let Login = "/login"
-let Register = "/register"
+let Login = "/login";
+let Register = "/register";
 
-export {Login, Register}
+export { Login, Register };

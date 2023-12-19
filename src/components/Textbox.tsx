@@ -5,7 +5,7 @@ enum FormType {
   Password,
 }
 
-const formTypeToText = (type: FormType): string => {
+const formTypeToString = (type: FormType): string => {
   switch (type) {
     case FormType.Text:
       return "text";
@@ -25,7 +25,7 @@ const Textbox: React.FC<{
         <span className="label-text">{name}</span>
       </div>
       <input
-        type={formTypeToText(type)}
+        type={formTypeToString(type)}
         className="input input-bordered w-full max-w-md"
         onChange={(e) => onChange(e.target.value)}
       />
@@ -33,4 +33,4 @@ const Textbox: React.FC<{
   );
 };
 
-export {Textbox, FormType};
+export { Textbox, FormType };

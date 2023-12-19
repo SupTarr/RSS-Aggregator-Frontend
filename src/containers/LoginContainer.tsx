@@ -33,7 +33,7 @@ const LoginContainer: React.FC = (): ReactElement => {
     {
       username: "",
       password: "",
-    }
+    },
   );
 
   return (
