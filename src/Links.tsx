@@ -1,4 +1,5 @@
+let Home = "/";
 let Login = "/login";
 let Register = "/register";
 
-export { Login, Register };
+export { Home, Login, Register };
