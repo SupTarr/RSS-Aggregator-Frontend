@@ -12,16 +12,16 @@ type PropsType = {
 const sizeToString = (size: Size): string => {
   switch (size) {
     case Size.Small:
-      return "sm";
+      return "loading-sm";
       break;
     case Size.Medium:
-      return "md";
+      return "loading-md";
       break;
     case Size.Large:
-      return "lg";
+      return "loading-lg";
       break;
     default:
-      return "xs";
+      return "loading-xs";
       break;
   }
 };
@@ -29,7 +29,7 @@ const sizeToString = (size: Size): string => {
 const Loading = ({ size = Size.ExSmall }: PropsType) => {
   return (
     <span
-      className={`loading loading-spinner loading-${sizeToString(size)}`}
+      className={`loading loading-spinner ${sizeToString(size)}`}
     ></span>
   );
 };

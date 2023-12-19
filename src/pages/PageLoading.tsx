@@ -1,7 +1,9 @@
+import { Loading, Size } from "../components/Loading.tsx";
+
 const PageLoading = () => {
   return (
     <section className="page-loading min-h-screen flex flex-col flex-wrap justify-center content-center">
-      <span className="loading loading-spinner loading-lg"></span>
+      <Loading size={Size.Large} />
     </section>
   );
 };
