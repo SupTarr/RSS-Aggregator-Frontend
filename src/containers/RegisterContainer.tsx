@@ -45,7 +45,7 @@ const RegisterContainer = () => {
   );
 
   return (
-    <form className="Register-container flex flex-col content-center flex-wrap">
+    <form className="register-container flex flex-col content-center flex-wrap">
       <Textbox
         name="Username"
         onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
@@ -62,6 +62,9 @@ const RegisterContainer = () => {
           dispatch({ type: "setConfirmPassword", confirmPassword: v })
         }
       />
+      <button className="btn btn-neutral mt-4" type="submit">
+        Register
+      </button>
       <Link className="link link-primary mt-5 text-center" to={Login}>
         Login
       </Link>

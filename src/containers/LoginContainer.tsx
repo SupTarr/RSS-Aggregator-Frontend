@@ -47,6 +47,9 @@ const LoginContainer = () => {
         type={FormType.Password}
         onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
       />
+      <button className="btn btn-neutral mt-4" type="submit">
+        Login
+      </button>
       <Link className="link link-primary mt-5 text-center" to={Register}>
         Register
       </Link>
