@@ -52,12 +52,12 @@ const RegisterContainer: React.FC = (): ReactElement => {
       />
       <Textbox
         name="Password"
-        formType={FormType.Password}
+        type={FormType.Password}
         onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
       />
       <Textbox
         name="Confirm Password"
-        formType={FormType.Password}
+        type={FormType.Password}
         onChange={(v: string) =>
           dispatch({ type: "setConfirmPassword", confirmPassword: v })
         }

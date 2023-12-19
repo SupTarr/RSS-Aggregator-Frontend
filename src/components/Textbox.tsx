@@ -5,7 +5,7 @@ enum FormType {
   Password,
 }
 
-let formTypeToText = (type: FormType): string => {
+const formTypeToText = (type: FormType): string => {
   switch (type) {
     case FormType.Text:
       return "text";
@@ -16,16 +16,16 @@ let formTypeToText = (type: FormType): string => {
 
 const Textbox: React.FC<{
   name: string;
-  formType?: FormType;
+  type?: FormType;
   onChange: (e: any) => void;
-}> = ({ name, formType = FormType.Text, onChange }): ReactElement => {
+}> = ({ name, type = FormType.Text, onChange }): ReactElement => {
   return (
     <label className="form-control w-full max-w-md">
       <div className="label">
         <span className="label-text">{name}</span>
       </div>
       <input
-        type={formTypeToText(formType)}
+        type={formTypeToText(type)}
         className="input input-bordered w-full max-w-md"
         onChange={(e) => onChange(e.target.value)}
       />
