@@ -24,9 +24,7 @@ const sizeToString = (size: Size): string => {
   }
 };
 
-const Loading: React.FC<{ size?: Size }> = ({
-  size = Size.ExSmall,
-}): ReactElement => {
+const Loading: React.FC<{ size?: Size }> = ({ size = Size.ExSmall }) => {
   return (
     <span
       className={`loading loading-spinner loading-${sizeToString(size)}`}

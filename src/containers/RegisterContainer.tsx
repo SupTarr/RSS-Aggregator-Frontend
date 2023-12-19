@@ -1,4 +1,4 @@
-import React, { ReactElement, useReducer } from "react";
+import { useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Textbox, FormType } from "../components/Textbox.tsx";
 import { Login } from "../Links.tsx";
@@ -14,7 +14,7 @@ type RegisterState = {
   confirmPassword: string;
 };
 
-const RegisterContainer: React.FC = (): ReactElement => {
+const RegisterContainer = () => {
   const [state, dispatch] = useReducer(
     (state: RegisterState, action: RegisterAction): RegisterState => {
       switch (action.type) {

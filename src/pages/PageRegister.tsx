@@ -1,7 +1,6 @@
-import React, { ReactElement } from "react";
 import RegisterContainer from "../containers/RegisterContainer.tsx";
 
-const PageRegister: React.FC = (): ReactElement => {
+const PageRegister = () => {
   return (
     <section className="page-register min-h-screen flex flex-col flex-wrap justify-center bg-neutral-content">
       <div className="card sm:card-side bg-base-100 drop-shadow-2xl mx-5">

@@ -18,7 +18,7 @@ const Textbox: React.FC<{
   name: string;
   type?: FormType;
   onChange: (e: any) => void;
-}> = ({ name, type = FormType.Text, onChange }): ReactElement => {
+}> = ({ name, type = FormType.Text, onChange }) => {
   return (
     <label className="form-control w-full max-w-md">
       <div className="label">

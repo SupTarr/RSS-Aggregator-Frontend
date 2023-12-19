@@ -1,7 +1,6 @@
-import React, { ReactElement } from "react";
 import LoginContainer from "../containers/LoginContainer.tsx";
 
-const PageLogin: React.FC = (): ReactElement => {
+const PageLogin = () => {
   return (
     <section className="page-login min-h-screen flex flex-col flex-wrap justify-center bg-neutral-content">
       <div className="card sm:card-side bg-base-100 drop-shadow-2xl mx-5">

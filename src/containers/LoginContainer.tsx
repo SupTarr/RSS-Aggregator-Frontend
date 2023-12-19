@@ -1,4 +1,4 @@
-import React, { ReactElement, useReducer } from "react";
+import { useReducer } from "react";
 import { Link } from "react-router-dom";
 import { Textbox, FormType } from "../components/Textbox.tsx";
 import { Register } from "../Links.tsx";
@@ -12,7 +12,7 @@ type LoginState = {
   password: string;
 };
 
-const LoginContainer: React.FC = (): ReactElement => {
+const LoginContainer = () => {
   const [state, dispatch] = useReducer(
     (state: LoginState, action: LoginAction): LoginState => {
       switch (action.type) {
