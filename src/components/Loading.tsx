@@ -1,11 +1,13 @@
-import React from "react";
-
 enum Size {
   ExSmall,
   Small,
   Medium,
   Large,
 }
+
+type PropsType = {
+  size?: Size;
+};
 
 const sizeToString = (size: Size): string => {
   switch (size) {
@@ -24,7 +26,7 @@ const sizeToString = (size: Size): string => {
   }
 };
 
-const Loading: React.FC<{ size?: Size }> = ({ size = Size.ExSmall }) => {
+const Loading = ({ size = Size.ExSmall }: PropsType) => {
   return (
     <span
       className={`loading loading-spinner loading-${sizeToString(size)}`}

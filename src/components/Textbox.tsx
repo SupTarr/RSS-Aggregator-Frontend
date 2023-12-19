@@ -1,9 +1,13 @@
-import React from "react";
-
 enum FormType {
   Text,
   Password,
 }
+
+type PropsType = {
+  name: string;
+  type?: FormType;
+  onChange: (e: any) => void;
+};
 
 const formTypeToString = (type: FormType): string => {
   switch (type) {
@@ -14,11 +18,7 @@ const formTypeToString = (type: FormType): string => {
   }
 };
 
-const Textbox: React.FC<{
-  name: string;
-  type?: FormType;
-  onChange: (e: any) => void;
-}> = ({ name, type = FormType.Text, onChange }) => {
+const Textbox = ({ name, type = FormType.Text, onChange }: PropsType) => {
   return (
     <label className="form-control w-full max-w-md">
       <div className="label">
