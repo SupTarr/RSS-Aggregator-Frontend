@@ -7,26 +7,30 @@ enum Size {
   Large,
 }
 
+const sizeToString = (size: Size): string => {
+  switch (size) {
+    case Size.Small:
+      return "sm";
+      break;
+    case Size.Medium:
+      return "md";
+      break;
+    case Size.Large:
+      return "lg";
+      break;
+    default:
+      return "xs";
+      break;
+  }
+};
+
 const Loading: React.FC<{ size?: Size }> = ({
   size = Size.ExSmall,
 }): ReactElement => {
-  let classModifier = "xs";
-  switch (size) {
-    case Size.Small:
-      classModifier = "sm";
-      break;
-    case Size.Medium:
-      classModifier = "md";
-      break;
-    case Size.Large:
-      classModifier = "lg";
-      break;
-    default:
-      break;
-  }
-
   return (
-    <span className={`loading loading-spinner loading-${classModifier}`}></span>
+    <span
+      className={`loading loading-spinner loading-${sizeToString(size)}`}
+    ></span>
   );
 };
 
