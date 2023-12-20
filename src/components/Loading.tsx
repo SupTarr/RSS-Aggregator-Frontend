@@ -28,9 +28,7 @@ const sizeToString = (size: Size): string => {
 
 const Loading = ({ size = Size.ExSmall }: PropsType) => {
   return (
-    <span
-      className={`loading loading-spinner ${sizeToString(size)}`}
-    ></span>
+    <span className={`loading loading-spinner ${sizeToString(size)}`}></span>
   );
 };
 

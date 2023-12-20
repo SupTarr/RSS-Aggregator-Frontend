@@ -45,7 +45,7 @@ const RegisterContainer = () => {
   );
 
   return (
-    <form className="register-container flex flex-col content-center flex-wrap">
+    <form className="register-container flex flex-col flex-wrap content-center">
       <Textbox
         name="Username"
         onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
