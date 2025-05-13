@@ -1,14 +1,15 @@
 import { useReducer } from "react";
 import { Link } from "react-router-dom";
-import { Textbox, FormType } from "../components/Textbox.tsx";
+import TextInput from "../components/TextInput.tsx";
+import PasswordInput from "../components/PasswordInput.tsx";
 import { Register } from "../Links.tsx";
 
 type LoginAction =
-  | { type: "setUsername"; username: string }
+  | { type: "setEmail"; email: string }
   | { type: "setPassword"; password: string };
 
 type LoginState = {
-  username: string;
+  email: string;
   password: string;
 };
 
@@ -16,10 +17,10 @@ const LoginContainer = () => {
   const [state, dispatch] = useReducer(
     (state: LoginState, action: LoginAction): LoginState => {
       switch (action.type) {
-        case "setUsername":
+        case "setEmail":
           return {
             ...state,
-            username: action.username,
+            email: action.email,
           };
         case "setPassword":
           return {
@@ -31,28 +32,34 @@ const LoginContainer = () => {
       }
     },
     {
-      username: "",
+      email: "",
       password: "",
     },
   );
 
   return (
-    <form className="login-container flex flex-col flex-wrap content-center">
-      <Textbox
-        name="Username"
-        onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
+    <form className="login-container flex h-full flex-col content-center justify-center">
+      <h2 className="card-title">Login</h2>
+      <p className="my-3 flex-grow-0">{state.email}</p>
+      <TextInput
+        name="Email"
+        onChange={(v: string) => dispatch({ type: "setEmail", email: v })}
       />
-      <Textbox
+      <PasswordInput
         name="Password"
-        type={FormType.Password}
         onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
       />
       <button className="btn btn-neutral mt-4" type="submit">
         Login
       </button>
-      <Link className="link link-primary mt-5 text-center" to={Register}>
-        Register
-      </Link>
+      <p className="my-3 flex-grow-0">
+        Don't have an account?{" "}
+        <span className="flex-grow-0">
+          <Link className="link" to={Register}>
+            Sign up
+          </Link>
+        </span>
+      </p>
     </form>
   );
 };

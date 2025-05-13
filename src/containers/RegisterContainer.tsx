@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { Link } from "react-router-dom";
-import { Textbox, FormType } from "../components/Textbox.tsx";
+import TextInput from "../components/TextInput.tsx";
+import PasswordInput from "../components/PasswordInput.tsx";
 import { Login } from "../Links.tsx";
 
 type RegisterAction =
@@ -45,19 +46,19 @@ const RegisterContainer = () => {
   );
 
   return (
-    <form className="register-container flex flex-col flex-wrap content-center">
-      <Textbox
+    <form className="register-container flex flex-col justify-center content-center h-full">
+      <h2 className="card-title">Register</h2>
+      <p className="my-3 flex-grow-0">{state.username}</p>
+      <TextInput
         name="Username"
         onChange={(v: string) => dispatch({ type: "setUsername", username: v })}
       />
-      <Textbox
+      <PasswordInput
         name="Password"
-        type={FormType.Password}
         onChange={(v: string) => dispatch({ type: "setPassword", password: v })}
       />
-      <Textbox
+      <PasswordInput
         name="Confirm Password"
-        type={FormType.Password}
         onChange={(v: string) =>
           dispatch({ type: "setConfirmPassword", confirmPassword: v })
         }
@@ -65,9 +66,14 @@ const RegisterContainer = () => {
       <button className="btn btn-neutral mt-4" type="submit">
         Register
       </button>
-      <Link className="link link-primary mt-5 text-center" to={Login}>
-        Login
-      </Link>
+      <p className="flex-grow-0 my-3">
+        Already registered?{" "}
+        <span className="flex-grow-0">
+          <Link className="link" to={Login}>
+            Login
+          </Link>
+        </span>
+      </p>
     </form>
   );
 };

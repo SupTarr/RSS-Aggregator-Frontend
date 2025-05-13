@@ -2,12 +2,11 @@ import RegisterContainer from "../containers/RegisterContainer.tsx";
 
 const PageRegister = () => {
   return (
-    <section className="page-register flex min-h-screen flex-col flex-wrap justify-center bg-neutral-content">
-      <div className="card mx-5 bg-base-100 drop-shadow-2xl sm:card-side">
-        <figure>
+    <section className="page-register flex min-h-screen flex-col flex-wrap justify-center content-center bg-neutral-content">
+      <div className="card mx-5 bg-base-100 drop-shadow-2xl md:card-side max-w-9/12">
+        <figure className="md:max-w-[50%]">
           <img
-            className="h-full"
-            src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
+            src="/imagecard2.jpg"
             alt="Album"
           />
         </figure>
